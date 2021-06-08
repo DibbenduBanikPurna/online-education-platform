@@ -1,5 +1,5 @@
 import React from 'react';
-import HomePic from '../../../Images/online-education.jpg'
+import HomePic from '../../../../Images/online-education.jpg'
 const Home = () => {
     return (
         <div className="container">

@@ -1,5 +1,5 @@
 import React from 'react';
-import Purna from '../../../Images/purna.jpeg'
+import Purna from '../../../../Images/purna.jpeg'
 const Banner = () => {
     return (
         <div>

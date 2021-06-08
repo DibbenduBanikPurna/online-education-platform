@@ -1,40 +1,61 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
-import Banner from './Images/Components/Banner/Banner';
-import CarrierBlog from './Images/Components/CarrierBlog/CarrierBlog';
-import Courses from './Images/Components/Courses/Courses';
-import Footer from './Images/Components/Footer/Footer';
 
+import HomeHeader from './Images/Components/HomeHeader/HomeHeader';
 
-import Greetings from './Images/Components/Greetings/Greetings';
-import Home from './Images/Components/Home/Home';
-import Joinning from './Images/Components/Joining/Joinning';
 import Navbar from './Images/Components/Navbar/Navbar';
-import PracticalWork from './Images/Components/PracticalWork/PracticalWork';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+
+} from "react-router-dom";
+import AllCources from './Images/Components/AllCources/AllCources';
+import CourporateCource from './Images/Components/CorporateCource/CourporateCource';
+import Login from './Images/Components/LogIn/LogIn'
+
+
+export const UserContext=createContext();
+
+
 
 
 function App() {
+  const [loggedInUser,setLoggedInUser]=useState({})
+  // console.log(loggedInUser);
   return (
     
     <div className="App">
+        <Router>
+          <p>Email:{loggedInUser.email}</p>
+        <Navbar/>
+          <Switch>
+            <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
 
-       <Navbar/>
-       <Greetings/>
-        <Home/>
-        <hr/>
-        <Courses/>
-        <hr/>
-        <Banner/>
-        <hr/>
+           
+            <Route exact path="/">
+            <HomeHeader/>
+            </Route>
 
-       <CarrierBlog/>
+            <Route exact path="/all-courses">
+            <AllCources/>
+            </Route>
 
-       <hr/>
-       <PracticalWork/>
-       <hr/>
-      <Joinning/>
-      <hr/>
-      <Footer/>
+            <Route path="/co-e-learning">
+              <CourporateCource/>
+            </Route>
+
+            <Route path="/log-in">
+              <Login/>
+            </Route>
+            </UserContext.Provider>
+          </Switch>
+
+          </Router>
+      
+     
+       
+      
 
     
     </div>

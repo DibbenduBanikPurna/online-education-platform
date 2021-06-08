@@ -2,7 +2,7 @@ import React from 'react';
 
 const CourseDetails = ({data}) => {
 
-    console.log(data);
+   // console.log(data);
 
     return (
         <div className="col-md-4">

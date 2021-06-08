@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { practialData } from '../Data/Data';
+import { practialData } from '../../Data/Data';
+
 import PracticalWorkDetails from './PracticalWorkDetails';
 
 const PracticalWork = () => {
     const [data,setData]=useState(practialData)
-    console.log(data);
+    //console.log(data);
     return (
         <div className="container mt-5 pt-5">
             <h2>Our endeavor is to make sure that you use the lessons of the course properly</h2>

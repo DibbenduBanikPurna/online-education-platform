@@ -1,3 +1,4 @@
+import { faLaptop  } from '@fortawesome/free-solid-svg-icons'
 const Data=[
     {
         "_id": "60290d726f5f629cfd174d23",
@@ -181,6 +182,35 @@ export const JoinData=[
         Title:"Join as an affiliate",
         Description:"You can earn 20% commission on each course sale in our affiliate marketing program. The Affiliate Dashboard has banners and text links to make your job easier."
     }
+
+]
+export const BuisnessData=[
+  {
+    id:1,
+    icon:faLaptop,
+  Name:"Industry-leading online courses & career tracks",
+
+},
+{
+  id:2,
+  icon:faLaptop,
+  Name:"Superior learning experience with world-class support",
+
+},
+{
+  id:3,
+  icon:faLaptop,
+  Name:"Seamless team management & analytics",
+
+},
+{
+  id:4,
+  icon:faLaptop,
+  Name:"Flexible course-bundling & payment terms",
+
+},
+
+
 ]
 
 
