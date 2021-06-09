@@ -13,7 +13,9 @@ import {
 import AllCources from './Images/Components/AllCources/AllCources';
 import CourporateCource from './Images/Components/CorporateCource/CourporateCource';
 import Login from './Images/Components/LogIn/LogIn'
-
+import TermsCondition from './Images/Components/TermsCondition/TermsCondition';
+import RefundPolicy from './Images/Components/RefundPolicy/RefundPolicy';
+import PrivacyPolicy from './Images/Components/PrivacyPolicy/PrivacyPolicy'
 
 export const UserContext=createContext();
 
@@ -47,6 +49,17 @@ function App() {
 
             <Route path="/log-in">
               <Login/>
+            </Route>
+
+            <Route path="/terms-and-condition">
+              <TermsCondition/>
+            </Route>
+
+            <Route path="/refund-policy">
+             <RefundPolicy/>
+            </Route>
+            <Route path="/privacy-policy">
+          <PrivacyPolicy/>
             </Route>
             </UserContext.Provider>
           </Switch>

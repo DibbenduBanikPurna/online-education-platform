@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee  } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <section>
@@ -68,7 +69,7 @@ const Footer = () => {
         </div>
 
         <div className="bg-secondary text-light p-3">
-            <p>Privacy Policy | Refund Policy | Terms And Conditions | Your Account</p>
+            <p><Link to="/privacy-policy">Privacy Policy</Link> |<Link to="/refund-policy">Refund Policy</Link>  | <Link to="/terms-and-condition">Terms And Conditions</Link> | <Link to="/log-in">Your Account</Link></p>
             <p>Copyright 2021 - Bohubrihi Technologies Ltd. | info@bohubrihi.com | +8801916-633509 (10AM-5PM)<br/>
             House 82, Road 10/1, Block D, Niketan, Gulshan 1, Dhaka - 1212. All Rights Reserved.</p>
         </div>
