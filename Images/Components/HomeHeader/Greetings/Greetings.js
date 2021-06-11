@@ -24,8 +24,8 @@ const Greetings = () => {
     }
    
     return (
-        <div>
-            <h3 className="text-primary"> {Greet}   </h3>
+        <div className="home">
+            <h3 className="text-primary text-center"> {Greet}   </h3>
            
         </div>
     );

@@ -20,11 +20,18 @@ const HomeHeader = () => {
         <div>
             <Greetings/>
             <Home/>
+            <br/>
            <Courses/>
+           <br/>
             <Banner/>
+            <br/>
            <CarrierBlog/>
           <PracticalWork/>
+          <br/>
+          <hr/>
             <Joinning/>
+            <br/>
+            <hr/>
             <Footer/>
         </div>
     );

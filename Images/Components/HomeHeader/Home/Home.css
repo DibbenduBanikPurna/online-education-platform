@@ -1,0 +1,27 @@
+.home{
+    background-color: #0D1B36;
+    text-align: left;
+}
+.btns{
+    font-weight: bold;
+
+background-color: #FE9C37;
+border-style: solid;
+border-width: 2px 2px 2px 2px;
+border-color: #FE9C37;
+border-radius: 10px 10px 10px 10px;
+font-size: 15px;
+padding: 13px 39px;
+line-height: 1;
+text-align: center;
+transition: all .3s;
+box-sizing: border-box;
+    
+}
+ol, li{
+
+    text-decoration: none;
+}
+img{
+    background-color: #0D1B36;
+}

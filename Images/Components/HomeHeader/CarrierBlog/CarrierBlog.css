@@ -1,0 +1,11 @@
+.head{
+    color: #102040;
+}
+.button{
+    background-color: #102040;
+    color: white;
+  
+    border-radius: 10px 10px 10px 10px;
+font-size: 15px;
+padding: 13px 24px;
+}
