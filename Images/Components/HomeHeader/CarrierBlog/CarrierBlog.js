@@ -7,7 +7,7 @@ const CarrierBlog = () => {
             <h5 className="mt-4">
             Learn everything you need to know about starting a career as a digital marketing executive in the country's industry.<br/><br/>From marketing and branding concepts to digital marketing tools - learn    everything through the necessary case studies and practical projects.
             </h5>
-
+            <br/>
             <button type="button" className="button">See Details</button>
         </div>
     );

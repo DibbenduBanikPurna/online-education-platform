@@ -2,16 +2,18 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee  } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
+import './Footer.css'
 const Footer = () => {
     return (
-        <section>
+        <section className="foot">
 
         
-        <div className="row">
+        <div className="row ">
             <div className="col-md-3">
                 <h3>Navigate</h3>
                 <ul>
                    <li>All Course</li> 
+                   
                    <li>Blog</li>
                    <li>Documentation</li>
                    <li>Certificate Verify</li>

@@ -16,6 +16,12 @@ import Login from './Images/Components/LogIn/LogIn'
 import TermsCondition from './Images/Components/TermsCondition/TermsCondition';
 import RefundPolicy from './Images/Components/RefundPolicy/RefundPolicy';
 import PrivacyPolicy from './Images/Components/PrivacyPolicy/PrivacyPolicy'
+import Marketting from './Images/Components/DigitalMarketting/Marketting';
+import Affliate from './Images/Components/Affliate/Affliate';
+import AffliateForm from './Images/Components/Affliate/AffliateForm/AffliateForm';
+import AffliateDashboard from './Images/Components/Affliate/AffliateDashboard/AffliateDashboard';
+import CreateCource from './Images/Components/Affliate/CreateCource/CreateCource';
+
 
 export const UserContext=createContext();
 
@@ -61,7 +67,31 @@ function App() {
             <Route path="/privacy-policy">
           <PrivacyPolicy/>
             </Route>
+
+            <Route path="/digital-marketting">
+          <Marketting/>
+            </Route>
+            <Route path="/affliates">
+              <Affliate/>
+            </Route>
+
+            <Route path="/affliate-form">
+              <AffliateForm/>
+            </Route>
+
+            <Route path="/affliate-dash">
+              <AffliateDashboard/>
+            </Route>
+
+            <Route path="/instructor">
+
+              <CreateCource/>
+            </Route>
             </UserContext.Provider>
+
+            
+
+           
           </Switch>
 
           </Router>

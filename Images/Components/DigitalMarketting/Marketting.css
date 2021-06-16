@@ -1,0 +1,17 @@
+.digit{
+    background-color: #162146;
+    color: white;
+    padding: 80px;
+}
+.d-button{
+    background-color:#FE9C37;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top:10px ;
+    padding-bottom: 10px;
+    border-radius: 10px;
+
+}
+.m{
+    text-align: justify;
+}

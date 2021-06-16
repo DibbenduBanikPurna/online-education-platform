@@ -29,6 +29,7 @@ const HomeHeader = () => {
           <PracticalWork/>
           <br/>
           <hr/>
+          <br/>
             <Joinning/>
             <br/>
             <hr/>

@@ -1,0 +1,28 @@
+.aff{
+    background-image: url('../../aff.jpg');
+    padding: 80px;
+}
+.reg-btn{
+    background-color: #102040;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+}
+.af-btn{
+    background-color:#FE9C37;
+    border-radius: 8px;
+    padding: 10px;
+    color: wheat;
+}
+.f{
+    margin: auto;
+    font-size: 40px;
+    background-color: yellow;
+
+}
+.fa{
+    margin: auto;
+    font-size: 60px;
+color: #FE9C37;
+    
+}
