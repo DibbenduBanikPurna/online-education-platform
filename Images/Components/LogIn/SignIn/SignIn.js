@@ -32,10 +32,10 @@ const SignIn = () => {
     var user = userCredential.user;
 
 
-    const {email}=user;
-    const signedInUser={email}
+    const {displayName}=user;
+    const signedInUser={displayName}
     setLoggedInUser(signedInUser);
-    console.log(user)
+    //console.log(user);
    
   })
   .catch((error) => {
@@ -44,7 +44,9 @@ const SignIn = () => {
     const newUser={...user}
     newUser.error=errorMessage;
     setUser(newUser);
-    console.log(errorMessage);
+
+    
+    //console.log(errorMessage);
 
   });
 

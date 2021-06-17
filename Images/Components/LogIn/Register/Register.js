@@ -11,12 +11,15 @@ const Register = () => {
 
     const [loggedInUser,setLoggedInUser]=useContext(UserContext)
     const [user,setUser]=useState({
+        name:'',
         email:'',
         password:'',
         error:'',
         success:'',
         IsSuccess:false
     })
+
+   
 
    
 
@@ -29,19 +32,23 @@ const Register = () => {
     const handleSubmit=(e)=>{
        
         firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
-  .then((userCredential) => {
+       .then((userCredential) => {
     
-    var user = userCredential.user;
+    var users = userCredential.user;
     var newUser={...user};
     newUser.success="user Created Successfully"
     newUser.IsSuccess=true
     setUser(newUser);
-    const {email}=user;
+    const {email}=users;
     const signedInUser = {email } 
     setLoggedInUser(signedInUser);
+    updateName(user.name);
+    console.log(user.name)
+   
    
     
   })
+
   .catch((error) => {
    
     var errorMessage = error.message;
@@ -49,16 +56,17 @@ const Register = () => {
     newUser.error=errorMessage;
     newUser.IsSuccess=false
     setUser(newUser);
-    console.log(errorMessage);
+    
     
   });
+
   e.preventDefault();
        
     }
 
-    
-    
-    const handleGoggleSignUp=()=>{
+
+    //Google Signup
+     const handleGoggleSignUp=()=>{
 
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()
@@ -77,14 +85,27 @@ const Register = () => {
     
   }).catch((error) => {
     
+    alert(error.errorMessage);
+   });
+
+    }
+
+    function updateName(name){
+        console.log(name);
+        const user = firebase.auth().currentUser;
+
+    user.updateProfile({
+  displayName:name,
+  
+   })
+   .then(res=>{
+      // console.log(res);
    
-    var errorMessage = error.message;
-    alert(errorMessage);
-   
- 
     
-    
-  });
+   }).catch((error) => {
+  
+    });
+
     }
 
     return (
@@ -96,6 +117,9 @@ const Register = () => {
             <p>------------Or---------------</p>
 
             <form onSubmit={handleSubmit}>
+                <input type="text" className="form-control" placeholder="Enter Name" onChange={handleChange} name="name"/>
+                <br/>
+
                 <input onChange={handleChange} name="email" className="form-control" type="text" placeholder="Enter Email"/>
 
                 <br/>

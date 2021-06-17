@@ -35,7 +35,7 @@ function App() {
     
     <div className="App">
         <Router>
-          <p>Email:{loggedInUser.email}</p>
+          <p>Name:{loggedInUser.displayName}</p>
         <Navbar/>
           <Switch>
             <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
