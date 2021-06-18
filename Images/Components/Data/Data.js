@@ -1,9 +1,9 @@
 import {faCalendar,faDollarSign,faChartLine,faMobile,faGift,faPaperclip, faLaptop,faBabyCarriage,faAddressBook,faHandshake,faStickyNote,faProjectDiagram,faWifi,faStopwatch,faFile, faVideo  } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+
 const Data=[
     {
-        "_id": "60290d726f5f629cfd174d23",
-       
+        
+        "id":1,
         "picture": 'html.png',
         "name": "HTML-5",
         "teacher":'Purna Banik',
@@ -11,7 +11,7 @@ const Data=[
        
       },
       {
-        "_id": "60290d724a36e7b8410dcb73",
+        id: 2,
         
         "picture":'css.png',
         "name": "CSS-3",
@@ -20,7 +20,7 @@ const Data=[
        
       },
       {
-        "_id": "60290d7213f66c23455b6676",
+        id: 3,
       
         "picture": "bootstrap.png",
         "name": "BOOTSTRAP-4",
@@ -29,7 +29,7 @@ const Data=[
         
       },
       {
-        "_id": "60290d72a35389d495bcee92",
+        id: 4,
         
         "picture": "reacts.jpg",
         "name": "REACT-JS",
@@ -38,7 +38,7 @@ const Data=[
         
       },
       {
-        "_id": "60290d72830a2cb513969814",
+        id: 4,
        
         "picture": "material-ui.jpg",
         "name": "Material Ui",
@@ -47,7 +47,7 @@ const Data=[
         
       },
       {
-        "_id": "60290d7220c3b0b74c00fd14",
+        id:5,
       
         "picture": "node.png",
         "name": "NODE-JS",
@@ -56,7 +56,8 @@ const Data=[
        
       },
       {
-        "_id": "60290d72a30ef45dc2988417",
+     
+        id:6,
         
         "picture": "sass.png",
         "name": "SASS",
@@ -65,7 +66,7 @@ const Data=[
       
       },
       {
-        "_id": "60290d72016125242cc587d3",
+     id:7,
         
         "picture": "vanila-js.jpg",
         "name": "VANILA-JS",
@@ -74,8 +75,8 @@ const Data=[
        
       },
       {
-        "_id": "60290d7216db733bff1d1f3b",
         
+        id:8,
         "picture": "c++.jpg",
         "name": "C++",
         "price":20,
@@ -83,7 +84,7 @@ const Data=[
        
       },
       {
-        "_id": "60290d72e8452aec6d25fea7",
+        id:9,
         
         "picture": "java.jpg",
         "name": "JAVA",
@@ -92,7 +93,7 @@ const Data=[
        
       },
       {
-        "_id": "60290d727c32c9e47460b007",
+        id:10,
       
         "picture": "Python.jpeg",
         "name": "PYTHON",
@@ -101,7 +102,7 @@ const Data=[
        
       },
       {
-        "_id": "60290d727ba3ff77feb172b3",
+        id:11,
        
         "picture": "graphic-design.jpg",
         "name": "GRAPHICS-DESIGN",
@@ -110,7 +111,7 @@ const Data=[
        
       },
       {
-        "_id": "60290d72caf0fd905032ed68",
+         id:12,
        
         "picture": "react-native.png",
         "name": "REACT-NATIVE",
@@ -119,8 +120,7 @@ const Data=[
        
       },
       {
-        "_id": "60290d72b5d01559cdbfc4b7",
-       
+        id:13,
         "picture": "data-structure.jpg",
         "name": "Data Structure",
         "price":22,
@@ -128,7 +128,7 @@ const Data=[
        
       },
       {
-        "_id": "60290d72262b20bfa941e0c7",
+       id:14,
        
         "picture": "digital-marketing2.jpg",
         "name": "DIGITAl-MARKETTING",
@@ -137,7 +137,7 @@ const Data=[
        
       },
       {
-        "_id": "60290d72262b20bfa941e0c0",
+        id:15,
         picture:'data-entry2.jpg',
         name:'Data Entry',
         price:10,

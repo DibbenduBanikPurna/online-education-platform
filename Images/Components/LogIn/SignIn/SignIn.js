@@ -3,11 +3,14 @@ import { UserContext } from '../../../../App';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../FirebaseConfig/FirebaseConfig';
+import { useHistory, useLocation } from 'react-router-dom';
 if(firebase.app.length === 0){
 firebase.initializeApp(firebaseConfig);
 }
 const SignIn = () => {
 
+    const history=useHistory();
+    const location=useLocation();
     const [loggedInUser,setLoggedInUser]=useContext(UserContext)
 
     const [user,setUser]=useState({
@@ -18,6 +21,7 @@ const SignIn = () => {
         IsSuccess:false
     })
 
+    let { from } = location.state || { from: { pathname: "/" } };
     const handleChange=(e)=>{
         const newUser={...user};
         newUser[e.target.name]=e.target.value;
@@ -28,14 +32,18 @@ const SignIn = () => {
 
         firebase.auth().signInWithEmailAndPassword(user.email, user.password)
      .then((userCredential) => {
-    
+       
     var user = userCredential.user;
 
 
     const {displayName}=user;
     const signedInUser={displayName}
     setLoggedInUser(signedInUser);
-    //console.log(user);
+    sessionStorage.setItem('token',signedInUser)
+    history.replace(from);
+    
+   
+   
    
   })
   .catch((error) => {
@@ -67,9 +75,10 @@ const SignIn = () => {
             const {displayName,email}=user;
 
              const signedInUser = {name: displayName, email} 
+             sessionStorage.setItem('token',signedInUser)
 
             setLoggedInUser(signedInUser);
-            
+            history.replace(from);
     }).catch((error) => {
 
     var errorMessage = error.message;
@@ -90,9 +99,11 @@ const SignIn = () => {
   });
     }
 
+   
+
     return (
         <div>
-             <button onClick={handleGoggleSignUp} className="btn btn-primary">Register With Goggle</button>
+             <button onClick={handleGoggleSignUp} className="btn btn-primary">Log In With Goggle</button>
             <br/>
             <br/>
             <p>------------Or---------------</p>

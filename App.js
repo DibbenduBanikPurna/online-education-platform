@@ -23,16 +23,18 @@ import AffliateDashboard from './Images/Components/Affliate/AffliateDashboard/Af
 import CreateCource from './Images/Components/Affliate/CreateCource/CreateCource';
 import EnrollHandle from './Images/Components/EnrolHandle/EnrollHandle';
 import PlaceOrderFunction from './Images/Components/PlaceOrderFunction/PlaceOrderFunction';
+import PrivateRoute from './Images/Components/PrivateRoute/PrivateRoute';
 
 
 export const UserContext=createContext();
 
-
+export const CourceContext=createContext();
 
 
 function App() {
   const [loggedInUser,setLoggedInUser]=useState({})
- console.log(loggedInUser);
+  const [courceData,setCourceData]=useState({})
+ //console.log(loggedInUser);
   return (
     
     <div className="App">
@@ -91,10 +93,14 @@ function App() {
 
 
             </Route>
+            
 
-            <Route path="/enrol:name">
+            <CourceContext.Provider value={[courceData,setCourceData]}>
+
+            <PrivateRoute path="/enrol:_id">
               <EnrollHandle/>
-            </Route>
+            </PrivateRoute>
+            </CourceContext.Provider>
 
             <Route path="/place-order">
              <PlaceOrderFunction/>

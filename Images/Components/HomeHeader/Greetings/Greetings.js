@@ -6,20 +6,20 @@ const Greetings = () => {
     var hours=time.getHours();
     console.log(hours);
     var Greet="";
-    if(hours>1 && hours<12){
+    if(hours=>1 && hours<12){
         Greet="Good Morning"
     }
-    else if(hours>12 && hours<15){
+    else if(hours=>12 && hours<15){
         Greet="Good Noon"
     }
-    else if(hours>15 && hours<17){
+    else if(hours=>15 && hours<17){
         Greet="Good Afternoon"
     }
-    else if(hours>17 && hours<19)
+    else if(hours=>17 && hours<19)
     {
         Greet="Good Evening"
     }
-    else {
+    else if(hours>=19 && hours<24) {
         Greet="Good Night"
     }
    

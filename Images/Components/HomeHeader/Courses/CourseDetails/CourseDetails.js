@@ -1,10 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import {  useHistory } from 'react-router-dom';
+import { UserContext } from '../../../../../App';
+
 
 const CourseDetails = ({data}) => {
+  const [loggedInUser,setLoggedInUser]=useContext(UserContext)
 
+  const history=useHistory();
+
+    const handleCource=()=>{
+   
+      history.push(`enroll/${data._id}`)
+      
+      
+      setLoggedInUser({data:data._id});
+    }
+  
    // console.log(data);
-
+  
     return (
         <div className="col-md-4 mt-5">
 
@@ -14,10 +27,10 @@ const CourseDetails = ({data}) => {
     <h5 class="card-title">{data.name}</h5>
         <p><strong>${data.price}</strong></p>
 
-        <Link to={`enroll/${data.name}`}>
-        <button  className="btn btn-secondary">Enroll-Now</button>
-        </Link>
-        
+        {/* <Link to={`enroll/${data.name}`}> */}
+        <button onClick={handleCource}  className="btn btn-secondary">Enroll-Now</button>
+        {/* </Link>
+         */}
   </div>
 </div>
         </div>

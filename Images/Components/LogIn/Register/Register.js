@@ -3,12 +3,15 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../FirebaseConfig/FirebaseConfig';
 import { UserContext } from '../../../../App';
+import { useHistory, useLocation } from 'react-router-dom';
 
 
 firebase.initializeApp(firebaseConfig);
 
 const Register = () => {
 
+  const history=useHistory()
+  const location=useLocation();
     const [loggedInUser,setLoggedInUser]=useContext(UserContext)
     const [user,setUser]=useState({
         name:'',
@@ -22,7 +25,7 @@ const Register = () => {
 
    
 
-   
+    let { from } = location.state || { from: { pathname: "/" } };
 
     const handleChange=(e)=>{
         const newUser={...user};
@@ -44,12 +47,12 @@ const Register = () => {
     const {email}=users;
     const signedInUser = {email } 
     setLoggedInUser(signedInUser);
-
-
+    sessionStorage.setItem('token',signedInUser)
+    history.replace(from);
     updateName(user.name);
     verifyEmail();
     
-    console.log(user.name)
+    //console.log(user.name)
    
    
     
@@ -86,6 +89,9 @@ const Register = () => {
 
              const signedInUser = {name: displayName, email} 
             setLoggedInUser(signedInUser);
+
+            sessionStorage.setItem('token',signedInUser)
+            history.replace(from);
             
     
     
