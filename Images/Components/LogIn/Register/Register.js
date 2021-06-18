@@ -16,6 +16,7 @@ const Register = () => {
         password:'',
         error:'',
         success:'',
+        check:'',
         IsSuccess:false
     })
 
@@ -31,18 +32,23 @@ const Register = () => {
 
     const handleSubmit=(e)=>{
        
-        firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
+     firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
        .then((userCredential) => {
     
     var users = userCredential.user;
+    
     var newUser={...user};
-    newUser.success="user Created Successfully"
+    newUser.success="user Created Successfully Check Your Email For verification"
     newUser.IsSuccess=true
     setUser(newUser);
     const {email}=users;
     const signedInUser = {email } 
     setLoggedInUser(signedInUser);
+
+
     updateName(user.name);
+    verifyEmail();
+    
     console.log(user.name)
    
    
@@ -107,6 +113,13 @@ const Register = () => {
     });
 
     }
+
+    const verifyEmail=()=>{
+    firebase.auth().currentUser.sendEmailVerification()
+  .then(() => {
+    
+  });
+}
 
     return (
 

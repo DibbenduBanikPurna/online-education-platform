@@ -21,6 +21,8 @@ import Affliate from './Images/Components/Affliate/Affliate';
 import AffliateForm from './Images/Components/Affliate/AffliateForm/AffliateForm';
 import AffliateDashboard from './Images/Components/Affliate/AffliateDashboard/AffliateDashboard';
 import CreateCource from './Images/Components/Affliate/CreateCource/CreateCource';
+import EnrollHandle from './Images/Components/EnrolHandle/EnrollHandle';
+import PlaceOrderFunction from './Images/Components/PlaceOrderFunction/PlaceOrderFunction';
 
 
 export const UserContext=createContext();
@@ -30,7 +32,7 @@ export const UserContext=createContext();
 
 function App() {
   const [loggedInUser,setLoggedInUser]=useState({})
-  // console.log(loggedInUser);
+ console.log(loggedInUser);
   return (
     
     <div className="App">
@@ -86,6 +88,16 @@ function App() {
             <Route path="/instructor">
 
               <CreateCource/>
+
+
+            </Route>
+
+            <Route path="/enrol:name">
+              <EnrollHandle/>
+            </Route>
+
+            <Route path="/place-order">
+             <PlaceOrderFunction/>
             </Route>
             </UserContext.Provider>
 

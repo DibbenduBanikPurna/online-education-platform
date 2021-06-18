@@ -78,6 +78,18 @@ const SignIn = () => {
    });
 }
 
+
+    const resetPassword=(email)=>{
+        firebase.auth().sendPasswordResetEmail(email)
+  .then(() => {
+    
+  })
+  .catch((error) => {
+   alert(error);
+ 
+  });
+    }
+
     return (
         <div>
              <button onClick={handleGoggleSignUp} className="btn btn-primary">Register With Goggle</button>
@@ -95,8 +107,13 @@ const SignIn = () => {
                 
                 <br/>
                 <br/>
-                <p className="text-dark">Lost your password?</p>
-                {user.error && <p className="text-danger">{user.error}</p>}
+                <h2 style={{cursor:'pointer'}} className="text-danger"
+                onClick={()=>resetPassword(user.email)} >Lost your password?</h2>
+                
+                
+                         {user.error && <p className="text-danger">{user.error}</p>}
+               
+            
                 
             </form> 
         </div>

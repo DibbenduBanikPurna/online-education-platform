@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CourseDetails = ({data}) => {
 
@@ -12,8 +13,11 @@ const CourseDetails = ({data}) => {
   <div class="card-body">
     <h5 class="card-title">{data.name}</h5>
         <p><strong>${data.price}</strong></p>
+
+        <Link to={`enroll/${data.name}`}>
+        <button  className="btn btn-secondary">Enroll-Now</button>
+        </Link>
         
-        <button className="btn btn-secondary">Enroll-Now</button>
   </div>
 </div>
         </div>
